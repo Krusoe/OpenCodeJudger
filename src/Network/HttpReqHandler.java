@@ -1,5 +1,6 @@
 package Network;
 
+import Network.Handlers.CodeRequestHandler;
 import Network.Handlers.VersionHandler;
 import com.sun.net.httpserver.HttpServer;
 
@@ -25,7 +26,6 @@ class RealReqHandler{
         server = HttpServer.create(new InetSocketAddress(8080), 0);
 
         regContexts();
-
         //Server thread pool init
         server.setExecutor(Executors.newFixedThreadPool(10));
         server.start();
@@ -36,6 +36,6 @@ class RealReqHandler{
     private void regContexts(){
         //Register
         server.createContext("/version", new VersionHandler());
-
+        server.createContext("/code/request",new CodeRequestHandler());
     }
 }

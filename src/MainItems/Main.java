@@ -1,5 +1,6 @@
 package MainItems;
 
+import Code.CodeRequestProcesser;
 import Network.HttpReqHandler;
 
 public class Main{
@@ -12,6 +13,7 @@ public class Main{
         while(true);
     }
     public static void initalizer(){
+        Info.setGppPath("D:\\JavaProgramLib\\OpenCodeJudger\\GPP\\bin\\gcc.exe");
         Info.setVersion("Indev Alpha Insider UNSTABLE 0.0.1");
     }
 }
